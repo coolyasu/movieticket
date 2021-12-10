@@ -1,0 +1,107 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "itemName": "iphone13pro",
+            "itemCategory": "mobile",
+            "itemQuantity": 4,
+            "dealerName": "yash",
+            "dealerMobNo": 9889898989,
+            "dealerEmailId": "yash@yash.com",
+            "dealerLocation": "Pune"
+        }
+    ],
+    "required": [
+        "itemName",
+        "itemQuantity",
+        "dealerName",
+        "dealerMobNo",
+        "dealerEmailId"
+    ],
+    "properties": {
+        "itemName": {
+            "$id": "#/properties/itemName",
+            "type": "string",
+            "minLength":2,
+            "maxLength": 50,
+            "title": "The itemName schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "iphone13pro"
+            ]
+        },
+        "itemCategory": {
+            "$id": "#/properties/itemCategory",
+            "type": "string",
+            "title": "The itemCategory schema",
+            "minLength":2,
+            "maxLength": 50,
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "mobile"
+            ]
+        },
+        "itemQuantity": {
+            "$id": "#/properties/itemQuantity",
+            "type": "integer",
+            "title": "The itemQuantity schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                4
+            ]
+        },
+        "dealerName": {
+            "$id": "#/properties/dealerName",
+            "type": "string",
+            "title": "The dealerName schema",
+            "minLength":2,
+            "maxLength": 50,
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "yash"
+            ]
+        },
+        "dealerMobNo": {
+            "$id": "#/properties/dealerMobNo",
+            "type": "string",
+            "title": "The dealerMobNo schema",        
+            "pattern": "^[7-9][0-9]{9}$",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                9889898989
+            ]
+        },
+        "dealerEmailId": {
+            "$id": "#/properties/dealerEmailId",
+            "type": "string",
+            "title": "The dealerEmailId schema",
+            "pattern": "[a-zA-Z0-9]+[@][a-z]+[.][a-z]{2,3}",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "yash@yash.com"
+            ]
+        },
+        "dealerLocation": {
+            "$id": "#/properties/dealerLocation",
+            "type": "string",
+            "title": "The dealerLocation schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Pune"
+            ]
+        }
+    },
+    "additionalProperties": true
+}
